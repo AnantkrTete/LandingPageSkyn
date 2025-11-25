@@ -1,3 +1,4 @@
+import logo from "@/assets/logo.png"
 const Header = ({ mode = "dark" }) => {
   return (
     <header
@@ -13,24 +14,24 @@ const Header = ({ mode = "dark" }) => {
         
         <div className="logo-container flex items-center gap-3">
 
-  {/* Show logo image ONLY in dark mode */}
-  {mode === "dark" && (
-    <img
-      src="/src/assets/logo.png"   /* ← replace with your actual file */
-      alt="LesSkyn Logo"
-      className="w-10 h-12 object-contain"
-    />
-  )}
+         {/* Show logo image ONLY in dark mode */}
+          {mode === "dark" && (
+          <img
+            src={logo}   /* ← replace with your actual file */
+            alt="LesSkyn Logo"
+           className="w-10 h-12 object-contain"
+          />
+        )}
 
-  {/* Always show the text, color changes with mode */}
-  <span
-    className={`font-garamond text-2xl md:text-3xl font-normal
-      ${mode === "dark" ? "text-white" : "text-black"}
-    `}
-  >
-    LesSkyn
-  </span>
-</div>
+          {/* Always show the text, color changes with mode */}
+          <span
+           className={`font-garamond text-2xl md:text-3xl font-normal
+            ${mode === "dark" ? "text-white" : "text-black"}
+          `}
+           >
+          LesSkyn
+        </span>
+        </div>
 
         {/* NAV LINKS */}
         <nav
