@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import img1 from "../assets/clearAcne.png";
 import img2 from "../assets/reduceOily.png";
 import img3 from "../assets/hydrateDrySkin.png";
-import img4 from "../assets/evenOutSkin.png";
+import img4 from "../assets/evenOutskin.png";
 import img5 from "../assets/MinimizePores.png";
 import img6 from "../assets/reduceRed.png";
 import img7 from "../assets/NaturalGlow.png";
