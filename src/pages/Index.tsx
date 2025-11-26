@@ -63,6 +63,8 @@ const Index = () => {
               // ⭐ custom star position
               starTop="-top-[10%]"
               starRight="-right-[5%]"
+              contentOffset="mr-80"
+              imageOffset="mr-20"
             />
 
 
@@ -89,7 +91,8 @@ const Index = () => {
             // ⭐ custom star position
               starTop="top-full translate-y-[-105%]"
               starRight="right-[-6%]"
-
+              contentOffset="ml-50"
+              imageOffset="ml-20"
               />
 
 
@@ -114,11 +117,12 @@ const Index = () => {
               starSrc={pinkStar}
 
               // ⭐ SHIFT ENTIRE TEXT BLOCK UP (title + star + description)
-              contentOffset="mt-[-18vw] sm:mt-[-12vw] lg:mt-[-160px]"
+              contentOffset="mr-80 mt-[-18vw] sm:mt-[-12vw] lg:mt-[-160px]"
 
               // ⭐ anchor star under title exactly
               starTop="top-full translate-y-[-100%]"
               starRight="right-[-12%]"
+              imageOffset="mr-20"
             />
 
 

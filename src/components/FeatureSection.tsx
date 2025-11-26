@@ -6,13 +6,12 @@ interface FeatureSectionProps {
   reverse?: boolean;
   titleOffset?: string;
   starSrc?: string;
-
-  // ⭐ NEW prop: moves entire text block (title + star + description)
   contentOffset?: string;
-
-  // ⭐ existing star adjustment props
   starTop?: string;
   starRight?: string;
+
+  // ⭐ NEW — shift image left or right
+  imageOffset?: string;
 }
 
 const FeatureSection = ({
@@ -26,6 +25,9 @@ const FeatureSection = ({
   contentOffset = "",
   starTop = "-top-2",
   starRight = "-right-8",
+
+  // new default
+  imageOffset = "",
 }: FeatureSectionProps) => {
   return (
     <div
@@ -35,8 +37,6 @@ const FeatureSection = ({
     >
       {/* LEFT TEXT BLOCK */}
       <div className={`relative z-10 max-w-xl ${contentOffset}`}>
-        
-        {/* TITLE + STAR WRAPPER */}
         <div className="relative inline-block">
           <h2
             className={`${titleOffset} relative font-garamond z-10 text-4xl md:text-5xl font-normal leading-tight`}
@@ -44,30 +44,22 @@ const FeatureSection = ({
             {title}
           </h2>
 
-          {/* STAR (anchored to title) */}
           {starSrc && (
             <img
               src={starSrc}
               alt=""
-              className={`
-                absolute
-                ${starTop}
-                ${starRight}
-                w-8 sm:w-12 lg:w-16
-                pointer-events-none
-              `}
+              className={`absolute ${starTop} ${starRight} w-8 sm:w-12 lg:w-16 pointer-events-none`}
             />
           )}
         </div>
 
-        {/* DESCRIPTION */}
         <p className="text-gray-600 text-lg mt-6 leading-relaxed">
           {description}
         </p>
       </div>
 
       {/* RIGHT IMAGE */}
-      <div className="relative z-10 w-full max-w-2xl">
+      <div className={`relative z-10 w-full max-w-2xl ${imageOffset}`}>
         <img
           src={imageSrc}
           alt={imageAlt}
