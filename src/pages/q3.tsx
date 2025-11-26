@@ -38,9 +38,9 @@ const FiveCardPage = () => {
 
             {/* RIGHT DECORATIONS */}
             <div className="flex flex-col gap-10 items-end">
-              <img src={GreenStar} className="w-20 md:w-18 transform translate-y-171 translate-x-10" />
+              <img src={GreenStar} className="w-20 md:w-18 transform translate-y-214 translate-x-10" />
               <img src={yellowtop} className="w-20 md:w-13 transform -translate-y-13 translate-x-10" />
-              <img src={yellowbottle} className="w-20 md:w-18 transform translate-y-124 -translate-x-100" />
+              <img src={yellowbottle} className="w-20 md:w-18 transform translate-y-154 -translate-x-100" />
               <img src={purpleright} className="w-20 md:w-18 transform translate-y-5 translate-x-10" />
             </div>
 
