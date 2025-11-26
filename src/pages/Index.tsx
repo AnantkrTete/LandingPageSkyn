@@ -7,7 +7,7 @@ import Community from "@/components/Community";
 import EarlyAccess from "@/components/EarlyAccess";
 import Footer from "@/components/Footer";
 import GridOverlay from "@/components/GridOverlay";
-import { useNavigate } from "react-router-dom";
+
 
 import videoConsultationImg from "@/assets/video-consult.png";
 import productAnalysisImg from "@/assets/product.png";
@@ -20,7 +20,7 @@ import pinkStar from "@/assets/Star 16.svg";
 
 
 const Index = () => {
-  const navigate = useNavigate();
+  
   
 
   return (
