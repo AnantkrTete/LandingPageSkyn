@@ -10,6 +10,7 @@ import Q2 from "./pages/q2";
 import Q3 from "./pages/q3";
 import Q4 from "./pages/q4";
 import Outcome from "./pages/outcome";
+import Summary from "./pages/Summary";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/q3" element={<Q3 />} /> 
           <Route path="/q4" element={<Q4 />} />
           <Route path="/outcome" element={<Outcome />} />
+          <Route path="/summary" element={<Summary/>} /> 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -2,7 +2,7 @@ import decoderImg from "@/assets/Skyn Decoder.png"
 import productImg from "@/assets/Skyn Decoder.png"
 import routineImg from "@/assets/Skyn Decoder.png"
 import expertImg from "@/assets/Skyn Decoder.png"
-
+import starSrc from "@/assets/Star 16.svg"
 const bibleCards = [
   {
     title: "Skyn Decoder",
@@ -30,17 +30,44 @@ const SkynBible = () => {
   return (
     <section id="bible" className="relative bg-yellow py-24 px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="font-garamond text-5xl md:text-6xl font-normal text-center mb-16 flex items-center justify-center gap-3">
         
-         Skyn Bible
-        </h2>
+        
+
+          <h2 className="font-garamond relative z-10 text-5xl md:text-6xl font-normal text-center mb-16">
+  
+              {/* WRAPPER ONLY FOR TITLE TEXT */}
+              <span className="relative inline-block">
+                
+                {/* ⭐ STAR BEHIND TITLE */}
+                <img
+                  src={starSrc}
+                  alt=""
+                  className="
+                    absolute
+                    top-1/2
+                    -translate-y-[50%]
+                    -left-[38px]      /* adjust this for perfect alignment */
+                    w-10 sm:w-12 lg:w-16
+                    z-0               /* BEHIND */
+                    opacity-100
+                    pointer-events-none
+                  "
+                />
+
+                {/* TITLE TEXT */}
+                <span className="relative z-10">Skyn Bible</span>
+
+              </span>
+            </h2>
+
+        
 
         <div className="grid md:grid-cols-2 gap-8">
           {bibleCards.map((card, index) => (
-  <div
-    key={index}
-    className="rounded-3xl overflow-hidden bg-secondary hover:shadow-md transition-shadow"
-  >
+          <div
+           key={index}
+           className="rounded-3xl overflow-hidden bg-secondary hover:shadow-md transition-shadow"
+            >
     {/* IMAGE */}
     <div className="w-full aspect-[1.63] overflow-hidden">
       <img

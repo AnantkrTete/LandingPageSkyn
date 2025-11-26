@@ -1,5 +1,5 @@
 
-import skyStar from "../assets/Star 16.svg"
+
 const stats = [
   { number: "500+", label: "Instagram followers" },
   { number: "300+", label: "Active users" },
@@ -8,29 +8,8 @@ const stats = [
 
 const Community = () => {
   return (
-    <section id="community" className="relative  px-6 -mt-[60px]">
-      <img
-        src={skyStar}
-        alt="pink star"
-        className="relative"
-        style={{
-          width: "86px",
-          height: "86px",
-          top :"830px",
-          left:"250px",
-        }}
-      />
-      <img
-        src={skyStar}
-        alt="pink star"
-        className="relative"
-        style={{
-          width: "86px",
-          height: "86px",
-          top :"760px",
-          left:"1060px",
-        }}
-      />
+    <section id="community" className="relative px-6 pt-16 pb-24 overflow-hidden">
+            
       <div className="container mx-auto max-w-6xl mb-[200px]">
         <div className="bg-purple rounded-[3rem] space-y-12 ">
 

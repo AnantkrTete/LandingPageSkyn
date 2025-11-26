@@ -1,11 +1,18 @@
-
 interface FeatureSectionProps {
   title: string;
-  titleOffset?: string; // e.g., "mt-10"
   description: string;
   imageSrc: string;
   imageAlt: string;
   reverse?: boolean;
+  titleOffset?: string;
+  starSrc?: string;
+
+  // ⭐ NEW prop: moves entire text block (title + star + description)
+  contentOffset?: string;
+
+  // ⭐ existing star adjustment props
+  starTop?: string;
+  starRight?: string;
 }
 
 const FeatureSection = ({
@@ -14,40 +21,60 @@ const FeatureSection = ({
   imageSrc,
   imageAlt,
   reverse = false,
-  titleOffset = "", 
+  titleOffset = "",
+  starSrc,
+  contentOffset = "",
+  starTop = "-top-2",
+  starRight = "-right-8",
 }: FeatureSectionProps) => {
   return (
-    <section className="relative py-28 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div
-          className={`grid md:grid-cols-2 gap-16 items-center ${
-            reverse ? "md:grid-flow-dense" : ""
-          }`}
-        >
-          {/* TEXT */}
-          <div className={`${reverse ? "md:col-start-2" : ""} space-y-6`}>
-            <h2 className={`${titleOffset} font-garamond text-4xl md:text-5xl font-normal leading-tight`}>
-              {title}
-            </h2>
-            
-            <p className="text-lg md:text-xl font-medium text-muted-foreground leading-relaxed max-w-[480px]">
-              {description}
-            </p>
-          </div>
+    <div
+      className={`relative flex flex-col lg:flex-row items-center gap-12 lg:gap-24 px-6 lg:px-24 py-20 ${
+        reverse ? "lg:flex-row-reverse" : ""
+      }`}
+    >
+      {/* LEFT TEXT BLOCK */}
+      <div className={`relative z-10 max-w-xl ${contentOffset}`}>
+        
+        {/* TITLE + STAR WRAPPER */}
+        <div className="relative inline-block">
+          <h2
+            className={`${titleOffset} relative font-garamond z-10 text-4xl md:text-5xl font-normal leading-tight`}
+          >
+            {title}
+          </h2>
 
-          {/* IMAGE */}
-          <div className={`${reverse ? "md:col-start-1" : ""}`}>
-            <div className="relative aspect-[4/3] rounded-3xl border border-black/20 overflow-hidden shadow-md bg-white">
-              <img
-                src={imageSrc}
-                alt={imageAlt}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+          {/* STAR (anchored to title) */}
+          {starSrc && (
+            <img
+              src={starSrc}
+              alt=""
+              className={`
+                absolute
+                ${starTop}
+                ${starRight}
+                w-8 sm:w-12 lg:w-16
+                pointer-events-none
+              `}
+            />
+          )}
         </div>
+
+        {/* DESCRIPTION */}
+        <p className="text-gray-600 text-lg mt-6 leading-relaxed">
+          {description}
+        </p>
       </div>
-    </section>
+
+      {/* RIGHT IMAGE */}
+      <div className="relative z-10 w-full max-w-2xl">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          className="w-full rounded-3xl shadow-lg"
+        />
+      </div>
+    </div>
   );
 };
 

@@ -1,17 +1,54 @@
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-
+import starSrc from "../assets/Star 16.svg"
 
 
 const EarlyAccess = () => {
   return (
     <section className="relative py-24 px-6">
       
-      <div className="container mx-auto max-w-4xl text-center space-y-12">
+      <div className="container mx-auto w-full text-center space-y-12">
         <div className="space-y-6">
-          <h2 className="font-garamond text-4xl md:text-5xl font-normal leading-tight">
-            Be the first to Experience India's smartest Skincare App
-          </h2>
+
+          <h2 className="relative font-garamond text-4xl md:text-5xl font-normal leading-tight text-center inline-block mx-auto">
+
+              {/* LEFT STAR */}
+              <img
+                src={starSrc}
+                alt=""
+                className="
+                  absolute
+                  left-[-20px]       
+                  top-[10px]
+                  w-8 sm:w-10 lg:w-12
+                  z-0
+                  pointer-events-none
+                "
+              />
+
+              {/* TITLE TEXT */}
+              <span className="relative z-10 block">
+                Be the first to Experience India’s 
+                smartest Skincare App
+              </span>
+
+              {/* RIGHT STAR */}
+              <img
+                src={starSrc}
+                alt=""
+                className="
+                  absolute
+                  right-[-20px]
+                  top-[10px]
+                  w-8 sm:w-10 lg:w-12
+                  z-0
+                  pointer-events-none
+                "
+              />
+            </h2>
+
+
+
           <p className="text-lg md:text-xl font-medium text-muted-foreground max-w-3xl mx-auto">
             Join our exclusive early access list and get personalized skincare routine before anyone else
           </p>
