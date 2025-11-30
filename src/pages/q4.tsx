@@ -23,6 +23,45 @@ import yellowbottle from "../assets/yellowbottom.svg";
 import GreenStar from "../assets/greenBottomRight.svg";
 import purpleright from "../assets/Purpleright.svg";
 
+const skinCards = [
+  {
+    title: "Reduce Oiliness & Shine",
+    img: img1,
+  },
+  {
+    title: "Hydrate Dry Skin",
+    img: img2,
+  },
+  {
+    title: "Even Out Skin Tone",
+    img: img3,
+  },
+  {
+    title: "Minimize Pores & Blackheads",
+    img: img4,
+  },
+  {
+    title: "Reduce Redness & Sensitivity",
+    img: img5,
+  },
+  {
+    title: "Achieve a Natural Glow",
+    img: img6,
+  },
+  {
+    title: "Clear Acne & Breakouts",
+    img: img7,
+  },
+  {
+    title: "Reduce Wrinkles & Fine Lines",
+    img: img8,
+  },
+  {
+    title: "Reduce Dark Spots",
+    img: img9,
+  },
+];
+
 const SkincareConcernPage = () => {
   const navigate = useNavigate();
 
@@ -39,118 +78,106 @@ const SkincareConcernPage = () => {
   };
 
   return (
-    <div className="relative min-h-[1550px] w-full text-white bg-gradient-to-r from-[#0A0433] via-[#47126B] to-[#FE639C]">
-      <Header mode="light" />
+    <div className="relative min-h-[960px] w-full text-white bg-gradient-to-r from-[#0A0433] via-[#47126B] to-[#FE639C]">
+      <Header mode="light" mobileDark={true}/>
 
       {/* decorations untouched */}
-            <div className="pointer-events-none absolute top-0 left-0 right-0 flex justify-between px-10">
-              <div className="flex flex-col gap-10">
-                <img src={PinkStar} className="w-20 md:w-18 transform translate-y-10 translate-x-69" />
-                <img src={blueBottle} className="w-20 md:w-18 transform translate-y-227 -translate-x-10" />
-                <img src={Purplebottle} className="w-20 md:w-18 transform translate-y-40 -translate-x-10" />
-              </div>
+            <div className="absolute inset-0 hidden md:block pointer-events-none">
 
-              <div className="flex flex-col gap-10 items-end">
-                <img src={GreenStar} className="w-20 md:w-18 transform translate-y-364 translate-x-10" />
-                <img src={yellowtop} className="w-20 md:w-13 transform -translate-y-13 translate-x-10" />
-                <img src={yellowbottle} className="w-20 md:w-18 transform translate-y-303 -translate-x-100" />
-                <img src={purpleright} className="w-20 md:w-18 transform translate-y-80 translate-x-10" />
-              </div>
-            </div>
+                {/* Top-left shape */}
+                <img 
+                  src={PinkStar} 
+                  className="w-20 absolute top-10 left-90"
+                />
 
-      <div className="pt-28 px-6 max-w-7xl mx-auto">
-        <h1 className="font-garamond text-[54px] leading-[54px] text-center">
-          What’s Your Skincare Concern?
+                {/* Mid-left bottle */}
+                <img 
+                  src={blueBottle} 
+                  className="w-20 absolute top-[80%] left-0"
+                />
+
+                {/* Bottom-left bottle */}
+                <img 
+                  src={Purplebottle} 
+                  className="w-20 absolute top-30 left-0"
+                />
+
+
+                {/* Top-right shape */}
+                <img 
+                  src={GreenStar} 
+                  className="w-20 absolute bottom-0 right-0"
+                />
+
+                {/* Middle-right */}
+                <img 
+                  src={yellowtop} 
+                  className="w-20 absolute top-[10%] right-0"
+                />
+
+                {/* Bottom-right */}
+                <img 
+                  src={yellowbottle} 
+                  className="w-20 absolute bottom-0 right-[45%]"
+                />
+
+                {/* Low-right purple */}
+                <img 
+                  src={purpleright} 
+                  className="w-20 absolute top-[45%] right-0"
+                />
+
+           </div>
+
+      <div className="relative z-10 pt-28 px-6 max-w-7xl mx-auto">
+        <h1 className="font-garamond text-[24px] leading-[34px] sm:mt-20 sm:text-[40px] sm:leading-[44px] md:text-[52px] md:leading-[56px] lg:text-[64px] lg:leading-[64px] text-center whitespace-nowrap">
+          Product Preferences
         </h1>
 
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 justify-items-center">
+        <div className="
+            mt-14
+            flex flex-wrap justify-center gap-5
+            lg:flex lg:flex-wrap lg:justify-center lg:gap-20
+          ">
 
-          {/* Each card now uses ARRAY LOGIC */}
-          <SkinTypeCard
-            title="Clear Acne & Breakouts"
-            img={img1}
-            selected={selected.includes("Clear Acne & Breakouts")}
-            onSelect={() => toggleSelect("Clear Acne & Breakouts")}
-          />
+          {skinCards.map((card, index) => (
+            <SkinTypeCard
+              key={index}
+              title={card.title}
+              img={card.img}
+              selected={selected.includes(card.title)}
+              onSelect={() => toggleSelect(card.title)}
+              mobileWidth="w-[80px]"
+              mobileTextSize ="text-[9px]"
+            />
+          ))}
 
-          <SkinTypeCard
-            title="Reduce Oiliness & Shine"
-            img={img2}
-            selected={selected.includes("Reduce Oiliness & Shine")}
-            onSelect={() => toggleSelect("Reduce Oiliness & Shine")}
-          />
 
-          <SkinTypeCard
-            title="Hydrate Dry Skin"
-            img={img3}
-            selected={selected.includes("Hydrate Dry Skin")}
-            onSelect={() => toggleSelect("Hydrate Dry Skin")}
-          />
-
-          <SkinTypeCard
-            title="Even Out Skin Tone & Reduce Dark Spots"
-            img={img4}
-            selected={selected.includes("Even Out Skin Tone & Reduce Dark Spots")}
-            onSelect={() => toggleSelect("Even Out Skin Tone & Reduce Dark Spots")}
-          />
-
-          <SkinTypeCard
-            title="Minimize Pores & Blackheads"
-            img={img5}
-            selected={selected.includes("Minimize Pores & Blackheads")}
-            onSelect={() => toggleSelect("Minimize Pores & Blackheads")}
-          />
-
-          <SkinTypeCard
-            title="Reduce Redness & Sensitivity"
-            img={img6}
-            selected={selected.includes("Reduce Redness & Sensitivity")}
-            onSelect={() => toggleSelect("Reduce Redness & Sensitivity")}
-          />
-
-          <SkinTypeCard
-            title="Achieve a Natural Glow"
-            img={img7}
-            selected={selected.includes("Achieve a Natural Glow")}
-            onSelect={() => toggleSelect("Achieve a Natural Glow")}
-          />
-
-          <SkinTypeCard
-            title="Achieve a Natural Glow"
-            img={img8}
-            selected={selected.includes("Achieve a Natural Glow")}
-            onSelect={() => toggleSelect("Achieve a Natural Glow")}
-          />
-
-          <SkinTypeCard
-            title="Anti-Aging: Reduce Wrinkles & Fine Lines"
-            img={img9}
-            selected={selected.includes("Anti-Aging: Reduce Wrinkles & Fine Lines")}
-            onSelect={() => toggleSelect("Anti-Aging: Reduce Wrinkles & Fine Lines")}
-          />
+          
         </div>
 
-        <div className="mt-20 flex justify-center gap-200 pb-20">
+        <div className="mt-20 flex justify-center gap-32 pb-20">
           <button
-            onClick={() => navigate("/q3")}
-            className="font-crimson font-semibold text-[20px] border border-black/50 bg-white text-black px-6 py-3 rounded-xl flex items-center gap-2"
+            onClick={() => navigate("/q2")}
+             className="font-garamond sm:font-crimson sm:font-semibold sm:text-[20px] border border-black/50 bg-white text-black px-6 py-3 rounded-3xl sm:rounded-xl flex items-center gap-2"
           >
-            <ArrowLeft className="w-5 h-5" /> Previous
+            <ArrowLeft className="w-5 h-5" />
+            Previous
           </button>
 
           <button
             onClick={async () => {
-              if (selected.length === 0) {
-                alert("Please select at least one concern!");
+              if (!selected) {
+                alert("Please select an option!");
                 return;
               }
 
               const userId = localStorage.getItem("quiz_user_id");
-              await saveAnswer(userId!, "q4_concern", selected);
+              await saveAnswer(userId!, "q3_preference", selected);
 
               navigate("/summary");
             }}
-            className="font-crimson font-semibold text-[20px] border border-black/50 bg-white text-black px-6 py-3 rounded-xl flex items-center gap-2"
+             className="font-garamond sm:font-crimson sm:font-semibold sm:text-[20px] border border-black/50 bg-white text-black px-6 py-3 rounded-3xl sm:rounded-xl flex items-center gap-2"
           >
             Next <ArrowRight className="w-5 h-5" />
           </button>

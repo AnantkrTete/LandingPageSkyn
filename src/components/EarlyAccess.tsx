@@ -10,7 +10,7 @@ const EarlyAccess = () => {
       <div className="container mx-auto w-full text-center space-y-12">
         <div className="space-y-6">
 
-          <h2 className="relative font-garamond text-4xl md:text-5xl font-normal leading-tight text-center inline-block mx-auto">
+          <h2 className="relative  font-garamond text-4xl md:text-5xl font-normal leading-tight text-center inline-block mx-auto">
 
               {/* LEFT STAR */}
               <img
@@ -18,6 +18,7 @@ const EarlyAccess = () => {
                 alt=""
                 className="
                   absolute
+                  hidden sm:block
                   left-[-20px]       
                   top-[10px]
                   w-8 sm:w-10 lg:w-12
@@ -27,7 +28,7 @@ const EarlyAccess = () => {
               />
 
               {/* TITLE TEXT */}
-              <span className="relative z-10 block">
+              <span className="relative text-2xl sm:text-5xl z-10 block">
                 Be the first to Experience India’s 
                 smartest Skincare App
               </span>
@@ -38,6 +39,7 @@ const EarlyAccess = () => {
                 alt=""
                 className="
                   absolute
+                  hidden sm:block
                   right-[-20px]
                   top-[10px]
                   w-8 sm:w-10 lg:w-12
@@ -49,20 +51,29 @@ const EarlyAccess = () => {
 
 
 
-          <p className="text-lg md:text-xl font-medium text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm md:text-xl font-medium text-black/50 max-w-3xl mx-auto">
             Join our exclusive early access list and get personalized skincare routine before anyone else
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto">
+        <div className="flex flex-col items-center sm:flex-row gap-4 max-w-2xl mx-auto">
+
           <Input
             type="email"
             placeholder="Enter your email address"
-            className="flex-1 h-14 px-6 text-base border-foreground/20 rounded-2xl bg-secondary"
+            className="w-full h-12 sm:h-16 px-4 text-sm sm:text-base text-black font-montserrat
+           border-black/50 rounded-xl bg-white"
           />
           <Button
             size="lg"
-            className="bg-[#FFAD71] hover:bg-coral/90 text-foreground border border-foreground/50 rounded-2xl px-10 h-14 text-base font-normal"
+            className="
+              bg-[#FFAD71] hover:bg-coral/90 text-black border border-black/40
+              rounded-xl px-6 py-3             /* MOBILE SIZE */
+              w-auto mx-auto                   /* CENTER BUTTON ON MOBILE */
+              sm:px-10 sm:h-14 sm:mx-0         /* DESKTOP UNCHANGED */
+              font-montserrat text-sm sm:text-base
+            "
+
           >
             Get Early Access
           </Button>

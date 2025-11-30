@@ -30,11 +30,11 @@ const HowItWorks = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center space-y-4 mb-16">
               
-          <h2 className="font-garamond text-5xl md:text-6xl font-normal flex items-center justify-center gap-3">
+          <h2 className="font-garamond text-2xl md:text-6xl font-normal flex items-center justify-center gap-3">
           <img
               src={yellowStar}
               alt="pink star"
-              className="relative"
+              className="relative hidden sm:block"
               style={{
                 width: "86px",
                 height: "86px",
@@ -45,7 +45,7 @@ const HowItWorks = () => {
             <img
               src={skyStar}
               alt="pink star"
-              className="relative"
+              className="relative hidden sm:block"
               style={{
                 width: "86px",
                 height: "86px",
@@ -54,7 +54,7 @@ const HowItWorks = () => {
             />
 
           </h2>
-          <p className="text-xl md:text-2xl font-medium text-muted-foreground">
+          <p className="text-sm sm:text-base lg:text-lgfont-medium text-muted-foreground">
             Your personalized skincare journey in 4 simple steps
           </p>
         </div>
@@ -63,18 +63,48 @@ const HowItWorks = () => {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="bg-white border border-foreground/10 rounded-3xl p-8 space-y-16 hover:shadow-lg transition-shadow"
+              className="/* MOBILE — Figma perfect */
+                w-[85%] mx-auto 
+                aspect-[262/226]
+                bg-white 
+                border border-black/80
+                rounded-3xl
+                p-5 pt-6 pb-8
+                space-y-2
+
+                /* DESKTOP (unchanged) */
+                md:w-auto md:aspect-[304/396] 
+                md:p-8 md:space-y-16 
+                md:border md:border-foreground/10 
+                md:hover:shadow-lg md:transition-shadow"
             >
-              <h3 className="font-garamond text-5xl font-normal">
+              <h3 className="font-garamond mt-2 md:mt-0 text-3xl md:text-5xl font-normal">
                 {step.number}
               </h3>
-              <div className="space-y-4">
-                <h4 className="font-garamond text-2xl font-normal">
+
+              <div className="mt-15 md:mt-0  space-y-2  md:space-y-4">
+                {/* Title */}
+                <h4
+                  className="
+                    font-garamond 
+                    text-xl md:text-2xl 
+                    font-normal
+                  "
+                >
                   {step.title}
                 </h4>
-                
-              
-                <p className="text-base font-medium text-muted-foreground leading-relaxed">
+
+                {/* Description */}
+                <p
+                  className="
+                    text-sm md:text-base 
+                    font-medium 
+                    text-muted-foreground 
+           
+                    leading-[16px] md:leading-relaxed
+                    tracking-[0.2px]
+                  "
+                >
                   {step.description}
                 </p>
               </div>

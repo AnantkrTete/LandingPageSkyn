@@ -26,7 +26,7 @@ const Index = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       {/* HEADER */}
-      <Header />
+      <Header mode = "dark" mobileDark={true} hideLogoTextDesktop={true}/>
 
       <main className="relative z-10">
 
@@ -44,89 +44,74 @@ const Index = () => {
         <HowItWorks />
 
      
-        
+        {/* MASTER WRAPPER FOR ALL FEATURE SECTIONS */}
+          <section className="relative overflow-hidden">
+
+            {/* BACKGROUND BARS (FULL WIDTH) */}
+            {/* BACKGROUND BARS (FULL WIDTH) */}
+          <div
+            className="
+              absolute inset-x-0
+              top-[180px]        /* mobile top */
+              sm:top-[260px]     /* small screens */
+              md:top-[320px]     /* tablet */
+              lg:top-[380px]     /* desktop (your original value) */
+              h-[560px] sm:h-[260px] md:h-[320px] lg:h-[360px]
+              bg-[#DABCFC]
+            "
+          />
 
 
-        {/* VIDEO CONSULTATION SECTION */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-x-0 bottom-0 h-[25vw] sm:h-[22vw] lg:h-[190px] 
-            bg-[#DABCFC]/100 pointer-events-none" />
+          <div
+            className="
+              absolute inset-x-0
+              top-[1280px]       /* mobile top (calibrated) */
+              sm:top-[1360px]
+              md:top-[1450px]
+              lg:top-[1520px]    /* desktop (your original value) */
+              h-[331px] sm:h-[240px] md:h-[260px] lg:h-[280px]
+              bg-[#FDE67B]
+            "
+          />
 
-          <FeatureSection
+
+
+          {/* MASTER WRAPPER — controls alignment */}
+          <div className="max-w-[1528px] mx-auto px-6 space-y- relative">
+
+            {/* 1. Expert Consultations (right-aligned text) */}
+            <FeatureSection
               title="Expert Video Consultations"
               description="Connect with trusted skincare influencers and certified dermatologists through video calls for personalized guidance when you need it most."
               imageSrc={videoConsultationImg}
-              imageAlt="video"
+              imageAlt="1"
               reverse={true}
               starSrc={pinkStar}
-
-              // ⭐ custom star position
-              starTop="-top-[10%]"
-              starRight="-right-[5%]"
-              contentOffset="mr-80"
-              imageOffset="mr-20"
             />
 
-
-        </section>
-
-        
-
-
-        {/* KNOW YOUR PRODUCT */}
-        <section className="relative overflow-hidden">
-
-          <div className="absolute inset-x-0 top-0 h-[30vw] sm:h-[26vw] lg:h-[250px] 
-            bg-[#DABCFC]/100 pointer-events-none" />
-
-             <FeatureSection
-             title="Know your Product"
+            {/* 2. Know Your Product (left-aligned text) */}
+            <FeatureSection
+              title="Know your Product"
               description="Understand what's actually in your products. We break down ingredients, explain what they do, and flag potential irritants for your skin type."
-               imageSrc={productAnalysisImg}
-              imageAlt="Know the poducts"
+              imageSrc={productAnalysisImg}
               reverse={false}
-             titleOffset="mt-[8vw] sm:mt-[6vw] lg:mt-[80px]"
+              imageAlt="2"
               starSrc={pinkStar}
+              hideStarOnMobile = {true}
+            />
 
-            // ⭐ custom star position
-              starTop="top-full translate-y-[-105%]"
-              starRight="right-[-6%]"
-              contentOffset="ml-50"
-              imageOffset="ml-20"
-              />
-
-
-        </section>
-
-
-        {/* STAR NEAR DASHBOARD */}
-        
-
-
-        {/* DASHBOARD SECTION */}
-        <section className="relative overflow-hidden">
-
-          <div className="absolute inset-x-0 bottom-0 h-[35vw] sm:h-[30vw] lg:h-[250px] 
-            bg-[#FDE67B]/100 pointer-events-none" />
+            {/* 3. Dashboard (right-aligned text) */}
             <FeatureSection
               title="Dashboard"
               description="Find your routine in one place and get daily analysis of the progress your skin made"
-              imageAlt="Dashboard"
               imageSrc={dashboardImg}
               reverse={true}
+              imageAlt="3"
               starSrc={pinkStar}
-
-              // ⭐ SHIFT ENTIRE TEXT BLOCK UP (title + star + description)
-              contentOffset="mr-80 mt-[-18vw] sm:mt-[-12vw] lg:mt-[-160px]"
-
-              // ⭐ anchor star under title exactly
-              starTop="top-full translate-y-[-100%]"
-              starRight="right-[-12%]"
-              imageOffset="mr-20"
+              hideStarOnMobile = {true}
             />
 
-
-
+          </div>
         </section>
 
 
@@ -143,22 +128,21 @@ const Index = () => {
 
 
         {/* COMMUNITY BLOCK + STAR REMOVED (was breaking layout) */}
-        <section className="px-6 pt-24 pb-4 flex justify-center overflow-hidden">
+        <section className="px-0 md:px-6 pt-24 pb-4 flex justify-center overflow-hidden">
 
           <div className="w-full max-w-[1528px] relative">
-            <div className="absolute inset-x-0 top-0 h-[80vw] sm:h-[70vw] lg:h-[780px] bg-[#DABCFC] rounded-[40px]" />
+            <div className="absolute  inset-x-0 top-4 sm:top-0 w-[92%] mx-auto h-[398px] rounded-3xl sm:w-full sm:h-[70vw] lg:h-[780px] bg-[#DABCFC]  lg:rounded-[40px]" />
 
-            <div className="relative px-8 pt-16 pb-4 space-y-16">
-              <div className="bg-white rounded-[32px] w-full max-w-[1406px] h-[300px] mx-auto"></div>
+              <div className="relative px-6 md:px-8 pt-16 pb-4 space-y-12">
 
-              <Community />
+                <Community />
+              </div>
             </div>
-          </div>
 
         </section>
 
 
-       <div className="mb-42">
+       <div className="mt-24 sm:-mt-8 mb-28 sm:mb-42">
         <EarlyAccess />
         </div>
 

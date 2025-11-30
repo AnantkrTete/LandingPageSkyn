@@ -46,19 +46,19 @@ const Summary = () => {
 
       <div className="max-w-2xl mx-auto space-y-6 bg-white/10 p-8 rounded-xl border border-white/20">
 
-        <p className="text-xl text-white">
+        <p className=" text-lg sm:text-xl text-white">
           <strong>Skin Type:</strong> {answers?.q1_skinType || "Not selected"}
         </p>
 
-        <p className="text-xl text-white">
+        <p className="text-lg sm:text-xl text-white">
           <strong>Commitment Level:</strong> {answers?.q2_commitment || "Not selected"}
         </p>
 
-        <p className="text-xl text-white">
+        <p className="text-lg sm:text-xl text-white">
           <strong>Product Preference:</strong> {answers?.q3_preference || "Not selected"}
         </p>
 
-        <p className="text-xl text-white">
+        <p className="text-lg sm:text-xl text-white">
           <strong>Main Concern:</strong> {answers?.q4_concern || "Not selected"}
         </p>
 
@@ -67,7 +67,7 @@ const Summary = () => {
       <div className="flex justify-center mt-12">
         <button
           onClick={() => navigate("/outcome")}
-          className="px-10 py-4 bg-white text-black text-xl rounded-xl border border-black/40"
+          className="px-10 py-4 bg-white text-black text-lg sm:text-xl rounded-xl border border-black/40"
         >
           Continue to Your Skincare Plan →
         </button>

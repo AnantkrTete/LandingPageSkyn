@@ -29,7 +29,7 @@ const OutcomePage = () => {
   
 
       {/* DARK HEADER (same as dashboard screenshot) */}
-      <Header mode="dark" />
+      <Header mode="dark" hideLogoTextDesktop={true} />
 
       {/* MAIN CONTENT */}
       <div className="pt-32 px-6 max-w-7xl mx-auto">

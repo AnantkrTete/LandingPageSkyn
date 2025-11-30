@@ -31,6 +31,7 @@ export default function Hero() {
                 top-[4%] left-[4%]
                 w-10 sm:w-14 lg:w-20
                 pointer-events-none
+                hidden sm:block
               "
             />
 
@@ -42,6 +43,7 @@ export default function Hero() {
                 top-[8%] right-[0%]
                 w-10 sm:w-14 lg:w-20
                 pointer-events-none
+                hidden sm:block
               "
             />
 
@@ -53,6 +55,7 @@ export default function Hero() {
                 bottom-[12%] right-0
                 w-12 sm:w-16 lg:w-24
                 pointer-events-none
+                hidden sm:block
               "
             />
 
@@ -64,67 +67,72 @@ export default function Hero() {
                 bottom-[18%] left-0
                 w-12 sm:w-16 lg:w-24
                 pointer-events-none
+                hidden sm:block
               "
             />
 
-      {/* MAIN CONTENT */}
-      <div className="relative z-10 flex flex-col items-center text-center px-4">
-        {/* Title with side stars */}
-        <div className="relative flex items-center justify-center mb-6 gap-2 sm:gap-4">
-          <img
-            src={yellowStar}
-            alt=""
-            className="hidden sm:block w-10 sm:w-12 lg:w-[86px]"
-          />
+              {/* MAIN CONTENT */}
+              <div className="relative z-10 flex flex-col items-center text-center px-4 -mt-0">
+                {/* Title with side stars */}
+                <div className="relative flex items-center justify-center mb-6 gap-2 sm:gap-4">
+                  <img
+                    src={yellowStar}
+                    alt=""
+                    className="w-7 sm:w-10 lg:w-[86px]"
+                  />
 
-          <h1
+                  <h1
+                  className="
+                    font-[Garamond]
+                    text-[27px] leading-[32px]
+                    sm:text-[40px] sm:leading-[46px]
+                    lg:text-[60px] lg:leading-[68px]
+                    text-black
+                  "
+                >
+                  Clarity in <span className="text-[#A85CFF]">Skincare</span> Chaos
+                </h1>
+
+
+                  <img
+                    src={yellowStar}
+                    alt=""
+                    className=" w-7 sm:w-10 lg:w-[86px]"
+                  />
+                </div>
+
+                {/* Subtitle */}
+                <p
+                className="
+                  max-w-[340px] sm:max-w-[720px] lg:max-w-[780px]
+                  text-[14px] sm:text-[16px] lg:text-[18px]
+                  font-[Montserrat] font-medium
+                  leading-[1.5]
+                  text-black/60
+                "
+              >
+                AI-powered skincare assistant that helps you understand your skin,
+                build personalized AM/PM routines, and connect with skincare experts.
+              </p>
+
+
+
+            {/* CTA Button */}
+            <button
+            onClick={() => navigate('/q1')}
             className="
-              font-[Garamond]
-              text-[36px] leading-[40px]
-              sm:text-[52px] sm:leading-[58px]
-              lg:text-[80px] lg:leading-[90px]
-              text-black
+              mt-6 sm:mt-8
+              px-8 sm:px-10
+              py-2.5 sm:py-3.5
+              text-[14px] sm:text-[16px] lg:text-[18px]
+              font-medium font-[Montserrat]
+              bg-[#FFAD71] border border-black rounded-full
+              hover:scale-105 transition
             "
           >
-            Clarity in <span className="text-[#BA99FF]">Skincare</span> Chaos
-          </h1>
+            Take quiz now
+          </button>
 
-          <img
-            src={yellowStar}
-            alt=""
-            className="hidden sm:block w-10 sm:w-12 lg:w-[86px]"
-          />
-        </div>
-
-        {/* Subtitle */}
-        <p
-          className="
-            max-w-[90%] sm:max-w-[720px] lg:max-w-[900px]
-            text-[16px] sm:text-[20px] lg:text-[24px]
-            font-[Montserrat] font-medium
-            leading-relaxed
-            text-black/50
-          "
-        >
-          AI-powered skincare assistant that helps you understand your skin,
-          build personalized AM/PM routines, and connect with skincare experts.
-        </p>
-
-        {/* CTA Button */}
-        <button
-          onClick={() => navigate("/q1")}
-          className="
-            mt-8 sm:mt-10
-            px-8 sm:px-10
-            py-3 sm:py-4
-            text-[16px] sm:text-[18px] lg:text-[20px]
-            font-medium font-[Montserrat]
-            bg-[#FFAD71] border border-black rounded-full
-            hover:scale-105 transition
-          "
-        >
-          Take quiz now
-        </button>
       </div>
     </section>
   );

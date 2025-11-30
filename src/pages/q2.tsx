@@ -17,69 +17,108 @@ import yellowbottle from "../assets/yellowbottom.svg";
 import GreenStar from "../assets/greenBottomRight.svg";
 import purpleright from "../assets/Purpleright.svg";
 
+
+const skinCards = [
+  {
+    title: "Minimal",
+    img: img1,
+  },
+  {
+    title: "Moderate",
+    img: img2,
+  },
+  {
+    title: "Intensive",
+    img: img3,
+  },
+];
+
 const CommitmentPage = () => {
   const navigate = useNavigate();
 
   const [selected, setSelected] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen text-white bg-gradient-to-r from-[#0A0433] via-[#47126B] to-[#FE639C] relative">
-      <Header mode="light" />
+    <div className="min-h-[100svh] text-white bg-gradient-to-r from-[#0A0433] via-[#47126B] to-[#FE639C] relative">
+      <Header mode="light" mobileDark={true} />
 
       {/* decorations same untouched */}
       {/* ➤ DECORATIVE SIDES */}
-          <div className="pointer-events-none absolute inset-0 flex justify-between px-10">
+         <div className="absolute inset-0 hidden sm:block pointer-events-none">
 
-            {/* LEFT DECORATIONS */}
-            <div className="flex flex-col gap-10">
-              <img src={PinkStar} className="w-20 md:w-18 transform translate-y-10 translate-x-69" />
-              <img src={blueBottle} className="w-20 md:w-18 transform translate-y-127 -translate-x-10" />
-              <img src={Purplebottle} className="w-20 md:w-18 transform -translate-y-30 -translate-x-10" />
-            </div>
+                {/* Top-left shape */}
+                <img 
+                  src={PinkStar} 
+                  className="w-20 absolute top-10 left-90"
+                />
 
-            {/* RIGHT DECORATIONS */}
-            <div className="flex flex-col gap-10 items-end">
-              <img src={GreenStar} className="w-20 md:w-18 transform translate-y-214 translate-x-10" />
-              <img src={yellowtop} className="w-20 md:w-13 transform -translate-y-13 translate-x-10" />
-              <img src={yellowbottle} className="w-20 md:w-18 transform translate-y-154 -translate-x-100" />
-              <img src={purpleright} className="w-20 md:w-18 transform translate-y-5 translate-x-10" />
-            </div>
+                {/* Mid-left bottle */}
+                <img 
+                  src={blueBottle} 
+                  className="w-20 absolute top-[80%] left-0"
+                />
 
-          </div>
+                {/* Bottom-left bottle */}
+                <img 
+                  src={Purplebottle} 
+                  className="w-20 absolute top-30 left-0"
+                />
 
-      <div className="pt-28 px-6 max-w-7xl mx-auto relative z-10">
-        <h1 className="font-garamond text-[54px] leading-[54px] text-center whitespace-nowrap">
+
+                {/* Top-right shape */}
+                <img 
+                  src={GreenStar} 
+                  className="w-20 absolute bottom-0 right-0"
+                />
+
+                {/* Middle-right */}
+                <img 
+                  src={yellowtop} 
+                  className="w-20 absolute top-[10%] right-0"
+                />
+
+                {/* Bottom-right */}
+                <img 
+                  src={yellowbottle} 
+                  className="w-20 absolute bottom-0 right-[45%]"
+                />
+
+                {/* Low-right purple */}
+                <img 
+                  src={purpleright} 
+                  className="w-20 absolute top-[45%] right-0"
+                />
+
+           </div>
+
+      <div className="relative z-10 pt-28 px-6 max-w-7xl mx-auto">
+        <h1 className="font-garamond text-[24px] leading-[34px] sm:mt-20 sm:text-[40px] sm:leading-[44px] md:text-[52px] md:leading-[56px] lg:text-[64px] lg:leading-[64px] text-center whitespace-nowrap">
           Skincare Routine Commitment Level
         </h1>
 
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20 justify-items-center">
-          <SkinTypeCard
-            title="Minimal"
-            img={img1}
-            selected={selected === "Minimal"}
-            onSelect={() => setSelected("Minimal")}
-          />
-
-          <SkinTypeCard
-            title="Moderate"
-            img={img2}
-            selected={selected === "Moderate"}
-            onSelect={() => setSelected("Moderate")}
-          />
-
-          <SkinTypeCard
-            title="Intensive"
-            img={img3}
-            selected={selected === "Intensive"}
-            onSelect={() => setSelected("Intensive")}
-          />
+         <div
+          className="
+            mt-14
+            flex flex-wrap justify-center gap-5
+            lg:flex lg:flex-wrap lg:justify-center lg:gap-10
+          "
+        >
+          {skinCards.map((card, index) => (
+            <SkinTypeCard
+              key={index}
+              title={card.title}
+              img={card.img}
+              selected={selected === card.title}
+              onSelect={() => setSelected(card.title)}
+            />
+          ))}
         </div>
 
         <div className="mt-20 flex justify-center gap-32 pb-20">
 
           <button
             onClick={() => navigate("/q1")}
-            className="font-crimson font-semibold text-[20px] border border-black/50 bg-white text-black px-6 py-3 rounded-xl flex items-center gap-2"
+             className="font-garamond sm:font-crimson sm:font-semibold sm:text-[20px] border border-black/50 bg-white text-black px-6 py-3 rounded-3xl sm:rounded-xl flex items-center gap-2"
           >
             <ArrowLeft className="w-5 h-5" />
             Previous
@@ -97,7 +136,7 @@ const CommitmentPage = () => {
 
               navigate("/q3");
             }}
-            className="font-crimson font-semibold text-[20px] border border-black/50 bg-white text-black px-6 py-3 rounded-xl flex items-center gap-2"
+             className="font-garamond sm:font-crimson sm:font-semibold sm:text-[20px] border border-black/50 bg-white text-black px-6 py-3 rounded-3xl sm:rounded-xl flex items-center gap-2"
           >
             Next <ArrowRight className="w-5 h-5" />
           </button>
